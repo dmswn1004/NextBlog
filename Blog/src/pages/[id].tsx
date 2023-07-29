@@ -6,7 +6,7 @@ import { remark } from 'remark';
 import html from 'remark-html';
 import Header from '../components/Layout/Header';
 import Footer from '../components/Layout/Footer';
-import { styled } from "styled-components"
+import styled from "styled-components"
 
 interface PostData {
     title: string;

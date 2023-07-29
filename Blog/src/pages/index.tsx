@@ -6,6 +6,7 @@ import Header from '../components/Layout/Header';
 import Footer from '../components/Layout/Footer';
 import { Post, PostListProps } from "../components/PostList"
 import PostList from '../components/PostList';
+import styled from "styled-components";
 
 export const getStaticProps: GetStaticProps<PostListProps> = async () => {
   const postsDirectory = path.join(process.cwd(), '__posts');
