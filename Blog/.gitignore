@@ -34,3 +34,5 @@ next-env.d.ts
 
 .babelrc
 /.babelrc
+
+.package-lock.json
