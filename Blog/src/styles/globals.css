@@ -1,4 +1,15 @@
 /* html, */
+@font-face {
+  font-family: 'omyu_pretty';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --color: 'var(--color';
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -27,4 +38,18 @@ a {
 
 .body{
   position: absolute;
+}
+
+[data-theme='light'] {
+  --color: black;
+  --background: white;
+  --btn: white;
+  --hover: black;
+}
+
+[data-theme='dark'] {
+  --color: white;
+  --background: rgb(74, 82, 223);
+  --btn: black;
+  --hover: white;
 }

@@ -55,10 +55,10 @@ const DetailPage: React.FC<DetailProps> = ({ post }) => {
         <div>
             <Header/>
                 <Box>
-                    <PostDetail>
-                        <h1>{post.title}</h1>
-                        <Content dangerouslySetInnerHTML={{ __html: post.content }} />
-                    </PostDetail>
+                    <PostTItle>
+                        {post.title}
+                    </PostTItle>
+                    <Content dangerouslySetInnerHTML={{ __html: post.content }} />
                 </Box>
             <Footer/>
         </div>
@@ -66,25 +66,24 @@ const DetailPage: React.FC<DetailProps> = ({ post }) => {
 };
 
 const Box = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 0;
-    text-decoration: none;
+    width: 720px;
+    display: box;
+    text-align: center;
+    margin: auto;
+    padding: 0.5rem 0;
+    font-family: 'omyu_pretty';
 `
 
-const PostDetail = styled.div`
-    width: 30.25rem;
-    height: 30.25rem;
+const PostTItle = styled.div`
     text-align: center;
-    padding: 2rem 2rem;
-    border-radius: 1.25rem;
-    background: rgba(217, 217, 217, 0.13);
-    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.20);
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 `
 
 const Content = styled.div`
-    text-decoration: none;
+    
 `
 
 export default DetailPage;

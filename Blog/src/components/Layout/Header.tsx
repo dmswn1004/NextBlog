@@ -1,38 +1,37 @@
+import { useRouter } from 'next/router';
 import styled from "styled-components"
 import Link from 'next/link';
+import { BsArrowLeft } from "react-icons/bs";
 
 const Header = () => {
+    const router = useRouter();
+
+    const goBack = () => {
+        if(router.asPath !== router.route) router.back();
+        else alert(" 마지막 페이지 입니다. ")
+    };
     return (
         <Head>
-            <h1>MyBlog</h1>
-            <Menu>
-                <Menus><Link href={`/`}>Home</Link></Menus>
-                <Menus>Tags</Menus>
-            </Menu>
+            <BsArrowLeft
+                onClick={goBack}
+                size={20}
+                style={{
+                    color: 'var(--color)',
+                    cursor: 'pointer',
+                    strokeWidth: 1 // 두께
+                }}
+                onMouseOver={e => e.currentTarget.style.color = '#61DAFB'}
+                onMouseOut={e => e.currentTarget.style.color = 'var(--color)'}
+            />
         </Head>
     )
 }
 
 const Head = styled.div`
-    // position: fixed;
     width: 100%;
-    display: flex;
     top: 0;
-    padding: 0 2rem;
-    justify-content: space-between;
-    align-items: center;
-    background: white;
-    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
     color: black;
 `;
-
-const Menu = styled.div`
-    color: rgba(0, 0, 0, 0.3);
-    font-weight: 500;
-`
-
-const Menus = styled.span`
-    padding: 0 0.5rem;
-`
 
 export default Header;
