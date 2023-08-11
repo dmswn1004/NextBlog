@@ -1,4 +1,5 @@
 import '../styles/globals.css'
+import 'prismjs/themes/prism.css';
 import { ThemeProvider } from 'next-themes';
 import ThemeToggleButton from '../components/Mode';
 

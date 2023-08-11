@@ -46,7 +46,6 @@ export const getServerSideProps: GetServerSideProps<PostListProps> = async (cont
 
 const ListPage: React.FC<PostListProps> = ({ posts, totalPage, currentPage }) => {
   const router = useRouter();
-  // const pages = new Array(totalPage).fill(null).map((_, i) => i + 1);
   return (
     <div>
       <Header/>

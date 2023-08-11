@@ -1,8 +1,8 @@
 ---
-title: Next를 시작하며...
+title: Vercel로 간단한 배포하기
 tag: 
-    - TS
-    - next
+    - Vercel
+    - 배포
 date: "2023-07-12"
 ---
 

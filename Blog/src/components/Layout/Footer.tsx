@@ -3,13 +3,13 @@ import styled from "styled-components"
 const Footer = () => {
     return (
         <End>
-            <span>Copyright © MyBolg Corp. All rights reserved.</span>
+            <span>Copyright ©NextBolg Corp. All rights reserved.</span>
         </End>
     )
 }
 
 const End = styled.div`
-    position: absolute;
+    display: flex;
     align-items: center;
     justify-content: center;
     bottom: 0;

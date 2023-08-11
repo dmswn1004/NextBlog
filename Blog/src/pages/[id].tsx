@@ -7,6 +7,7 @@ import html from 'remark-html';
 import Header from '../components/Layout/Header';
 import Footer from '../components/Layout/Footer';
 import styled from "styled-components"
+import prism from 'remark-prism';
 
 interface PostData {
     title: string;
@@ -37,9 +38,10 @@ export const getStaticProps: GetStaticProps<DetailProps> = async ({ params }) =>
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const { data, content } = matter(fileContents);
   
-    const processedContent = await remark().use(html as any).process(content);
+
+    const processedContent = await remark().use(html).use(prism).process(content);
     const contentHtml = processedContent.toString();
-  
+
     return {
         props: {
             post: {
@@ -68,13 +70,13 @@ const DetailPage: React.FC<DetailProps> = ({ post }) => {
 const Box = styled.div`
     width: 720px;
     display: box;
-    text-align: center;
     margin: auto;
     padding: 0.5rem 0;
     font-family: 'omyu_pretty';
 `
 
 const PostTItle = styled.div`
+    padding-bottom: 2rem;
     text-align: center;
     font-size: 1.5rem;
     font-style: normal;
@@ -83,7 +85,23 @@ const PostTItle = styled.div`
 `
 
 const Content = styled.div`
+    padding: 1rem 1rem;
+    text-align: left;
+
+    pre {
+        padding: 1rem 1rem; 
+        background-color: #282c34; 
+        border-radius: 8px;
+        overflow-x: auto; // 긴 코드 라인에 대한 스크롤
+      }
     
-`
+      code {
+        color: white;
+      }
+    
+      .token.string {
+        color: #98c379;
+      }
+`;
 
 export default DetailPage;
